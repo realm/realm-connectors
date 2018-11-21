@@ -1,3 +1,20 @@
+1.5.0 Release notes (2018-11-21)
+================================
+## Enhancements
+* Added an optional custom logger named `PostgresAdapterConfig.logger`. The default logger will log to the console with a log level set to `info` (see [winston](https://github.com/winstonjs/winston) for details). An example of the output is `2018-11-09T13:44:29.974Z [REALM ADAPTER] info: Found Postgres version < 10.`. ([#303](https://github.com/realm/data-adapters/issues/303))
+
+## Fixed
+* Fixed a bug where clients could miss changes from Postgres if the adapter crashes while integrating a change. Now restarting the adapter should resume from the last unprocessed Postgres transaction. ([#344](https://github.com/realm/data-adapters/issues/344) and [#47](https://github.com/realm/data-adapters/issues/47), since v1.0.1)
+* Fixed a bug where deleting a row and an object simultaneously could lead to the error `object must be of type 'object', got (undefined) processing object`. ([#389](https://github.com/realm/data-adapters/issues/389), since v1.0.0)
+* Failed SQL queries can now be retried with an exponential backoff delay. This is configurable via `QueryRetryConfig` in the configuration. ([#305](https://github.com/realm/data-adapters/issues/305))
+
+## Compatibility
+* Realm Object Server: 3.0.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+## Internal
+* None.
+
 1.4.2 Release notes (2018-10-26)
 ================================
 ## Enhancements

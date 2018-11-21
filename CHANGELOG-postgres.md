@@ -1,5 +1,6 @@
 1.5.0 Release notes (2018-11-21)
 ================================
+
 ## Enhancements
 * Added an optional custom logger named `PostgresAdapterConfig.logger`. The default logger will log to the console with a log level set to `info` (see [winston](https://github.com/winstonjs/winston) for details). An example of the output is `2018-11-09T13:44:29.974Z [REALM ADAPTER] info: Found Postgres version < 10.`. ([#303](https://github.com/realm/data-adapters/issues/303))
 
@@ -14,6 +15,7 @@
 
 ## Internal
 * None.
+
 
 1.4.2 Release notes (2018-10-26)
 ================================

@@ -1,5 +1,6 @@
 1.7.0 Release notes (2018-11-21)
 ================================
+
 ## Enhancements
 * Added an optional custom logger named `SQLServerAdapterConfig.logger`. It uses [winston](https://github.com/winstonjs/winston). The default logger will log to the console with a log level set to `info` (see winston for details). An example of the output is `2018-11-09T13:57:28.425Z [REALM ADAPTER] info: Finished processing table MyPerson. Imported 4 rows in 0:00:00.1 (40 rows/second)`. ([#303](https://github.com/realm/data-adapters/issues/303))
 
@@ -17,6 +18,7 @@
 
 ## Internal
 * Loading compound keys which include a date is slightly faster. ([#383](https://github.com/realm/data-adapters/pull/383))
+
 
 1.6.3-rc1 Release notes (2018-11-09)
 ================================

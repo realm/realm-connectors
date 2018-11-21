@@ -1,5 +1,27 @@
-1.6.3-rc1 Release notes (2018-11-09)
+1.7.0 Release notes (2018-11-21)
 ================================
+
+## Enhancements
+* Added an optional custom logger named `SQLServerAdapterConfig.logger`. It uses [winston](https://github.com/winstonjs/winston). The default logger will log to the console with a log level set to `info` (see winston for details). An example of the output is `2018-11-09T13:57:28.425Z [REALM ADAPTER] info: Finished processing table MyPerson. Imported 4 rows in 0:00:00.1 (40 rows/second)`. ([#303](https://github.com/realm/data-adapters/issues/303))
+
+## Fixed
+* Fixed a bug where column name and property name are different in a compound key. The adapter stopped with the error message `Error: No property 'BAR' on object of type 'foo' processing object`. ([#378](https://github.com/realm/data-adapters/issues/378), since v1.5.3-rc1)
+* Added a small performance optimization to the compound key cache. ([#379](https://github.com/realm/data-adapters/issues/379), since v1.6.2)
+* When loading data into ROS for a second time without wiping ROS data, objects with a compound primary key would end up being duplicated with only the realm primary key changing. The fix does not affect performance of the first load. ([#383](https://github.com/realm/data-adapters/pull/383), since v1.0.0)
+* Fixed a missing translation through the config mapping of property name to column name when setting a Realm property quickly after inserting it on a table which has a `sqlserverPrimaryKey` set. ([#383](https://github.com/realm/data-adapters/pull/383), since v1.6.0)
+* Fixed a bug where deleting a row with an integer primary key would crash the adapter. ([#390](https://github.com/realm/data-adapters/pull/390), since v1.0.0)
+* Fixed a bug where deleting a row and an object simultaneously could lead to the error `object must be of type 'object', got (undefined) processing object`. ([#389](https://github.com/realm/data-adapters/issues/389), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.0.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+## Internal
+* Loading compound keys which include a date is slightly faster. ([#383](https://github.com/realm/data-adapters/pull/383))
+
+
+1.6.3-rc1 Release notes (2018-11-09)
+====================================
 
 ## Fixed
 * Better robustness in the compound key cache in case of corruption.

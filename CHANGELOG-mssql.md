@@ -1,3 +1,31 @@
+2.0.0 Release notes (2018-11-28)
+================================
+## Enhancements
+* Upgraded to Realm JavaScript v2.20.0. You will need to upgrade your Realm Object Server to at least version 3.11.0 or use [Realm Cloud](https://cloud.realm.io). If you try to connect to a ROS v3.10.x or previous, you will see an error like `Wrong protocol version in Sync HTTP request, client protocol version = 25, server protocol version = 24`. ([#391](https://github.com/realm/data-adapters/issues/391))
+  - Improved the proactive token refresh mechanism to make several attempts to refresh the token before it expires.
+  - Added support for Node 10.
+  - A set of bugs that could lead to bad changesets have been fixed. An example of error message is `Failed to parse, or apply received changeset: ndx out of range`.
+* MSSQL primary keys (`sqlserverPrimaryKey` properties) are now populated from a query OUTPUT of each insert instead of waiting for changes to "echo" back. ([#224](https://github.com/realm/data-adapters/issues/224))
+
+## Fixed
+* Fixed a bug where conflicting writes from both MSSQL and Realm to the same rows/objects would result in the opposite values on either side. Now there is a consistent result (though it is not deterministic which side will "win"). ([#224](https://github.com/realm/data-adapters/issues/224), since v1.0.0)
+* Fixed a crash when processing a realm instruction for a type which is not included in the adapter schema. Instructions for an unknown type are now ignored ([#402](https://github.com/realm/data-adapters/issues/402), since v1.2.1-rc16)
+* Fixed Realm objects becoming orphans when SQL delete events occur quickly after Realm inserts object but before the SQL generated primary keys are echoed back to Realm. This is no longer an issue because SQL id's are populated immediately from "INSERT" statements so there is no "echo" period where the realm objects do not have their `sqlserverPrimaryKey` property populated. ([#199](https://github.com/realm/data-adapters/issues/199), since v1.0.0)
+* Added a workaround to get stack trace progagated to the log. ([#397](https://github.com/realm/data-adapters/issues/397), since v1.7.0)
+
+## Breaking changes
+* Removed the config option `applyRealmSchemaChangesToSQLServer`. Adding a Realm class which is not part of the adapter schema would cause the adapter to crash. Now, all instructions which relate to classes which are not defined in the adapter schema are ignored. If additional classes should be handled by the adapter, add them manually to MSSQL, then add the corresponding definitions to the adapter schema and reload. If you need help creating the Realm schema, use the schema generator (scripts/realm_schema_generator/index.js). ([#402](https://github.com/realm/data-adapters/issues/402), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+## Internal
+* Cleaned up distribution package. ([#405](https://github.com/realm/data-adapters/pull/405))
+* Upgraded to Realm JavaScript v2.20.0.
+* Upgraded our `mssql` dependency from 4.2.1 to 4.2.3. See https://github.com/tediousjs/node-mssql/releases for details. One noticeable change is that the upgrade fixes the following deprecation warning which used to be printed every time: "tedious deprecated The default value for `options.encrypt` will change from `false` to `true`. Please pass `false` explicitly if you want to retain current behaviour. node_modules/mssql/lib/tedious.js:230:23". ([#224](https://github.com/realm/data-adapters/issues/224))
+
+
 1.7.0 Release notes (2018-11-21)
 ================================
 

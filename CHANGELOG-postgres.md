@@ -1,3 +1,23 @@
+1.6.0 Release notes (2018-11-28)
+================================
+## Enhancements
+* Upgraded to Realm JavaScript v2.20.0. You will need to upgrade your Realm Object Server to at least version 3.11.0 or use [Realm Cloud](https://cloud.realm.io). If you try to connect to a ROS v3.10.x or previous, you will see an error like `Wrong protocol version in Sync HTTP request, client protocol version = 25, server protocol version = 24`. ([#391](https://github.com/realm/data-adapters/issues/391))
+  - Improved the proactive token refresh mechanism to make several attempts to refresh the token before it expires.
+  - Added support for Node 10.
+  - A set of bugs that could lead to bad changesets have been fixed. An example of error message is `Failed to parse, or apply received changeset: ndx out of range`.
+
+## Fixed
+* Added a workaround to get stack trace progagated to the log. ([#397](https://github.com/realm/data-adapters/issues/397), since v1.5.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+## Internal
+* Cleaned up the distribution package. ([#405](https://github.com/realm/data-adapters/pull/405))
+* Upgraded to Realm JavaScript v2.20.0.
+
+
 1.5.0 Release notes (2018-11-21)
 ================================
 

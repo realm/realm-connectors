@@ -1,3 +1,16 @@
+1.7.0 Release notes (2018-12-07)
+================================
+## Enhancements
+* Added option `PostgresAdapterConfig.logSyncClient`. If true, the logs from the connection between the adapter and Realm Object Server will written to the logger specified by `PostgresAdapterConfig.logger`. ([#219](https://github.com/realm/data-adapters/issues/219))
+* Added option `PostgresAdapterConfig.ignoreSQLErrors`. If true, rejected SQL statements will be ignored and the adapter will continue, otherwise the adapter will throw an exception and stop. ([#190](https://github.com/realm/data-adapters/issues/190))
+
+## Fixed
+* The [logLevel](https://github.com/realm/data-adapters/blob/master/packages/postgres/src/PostgresAdapterConfig.ts#L166) parameter is passed correctly to the logger when using TypeScript to configure the project, previously it would fallback to `info` level. ([#437](https://github.com/realm/data-adapters/issues/437), since 1.5.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
 1.6.0 Release notes (2018-11-28)
 ================================
 ## Enhancements

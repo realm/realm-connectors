@@ -1,3 +1,16 @@
+2.1.0 Release notes (2018-12-07)
+================================
+## Enhancements
+* Added option `SQLServerAdapterConfig.logSyncClient`. If true, the logs from the connection between the adapter and Realm Object Server will be written to the logger specified by `SQLServerAdapterConfig.logger`. ([#219](https://github.com/realm/data-adapters/issues/219))
+
+## Fixed
+* `SQLServerAdapterConfig.loadOnline` configuration option was not set appropriately causing the loader to still upload changes to Realm Object Server if the option was set to `false`. ([#418](https://github.com/realm/data-adapters/issues/418), since v1.2.1-rc28)
+* The [logLevel](https://github.com/realm/data-adapters/blob/master/packages/mssql/src/SQLServerAdapterConfig.ts#L217) parameter is passed correctly to the logger when using TypeScript to configure the project, previously it would fallback to `info` level. ([#437](https://github.com/realm/data-adapters/issues/437), since v1.7.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.0.0 Release notes (2018-11-28)
 ================================
 ## Enhancements

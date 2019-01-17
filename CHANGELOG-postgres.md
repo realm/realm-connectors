@@ -1,3 +1,21 @@
+1.8.0 Release notes (2019-01-17)
+================================
+## Enhancements
+* Reduced memory usage when processing a large number of Realm changesets at once. ([#452](https://github.com/realm/data-adapters/pulls/452))
+* Improved performance and memory usage of `Realm.Sync.Adapter`. ([realm/realm-js-private#501](https://github.com/realm/realm-js-private/pull/501))
+* To avoid excessive logging to the Console and hitting this node.js [issue](https://github.com/nodejs/node/issues/6379), a new logger is provided. It logs to a file `realm-adapter-log-YYYY-MM-DD-MM-SS.txt` created in the directory where the Adapter is started. The default logger is unchanged (logging to the Console) but you can switch to the file based logger by adding `logger: createFileLogger(loglevel, filename)` to the configuration. `loglevel` is optional and defaults to `INFO`, and `filename` is optional and defaults to `realm-adapter-log-YYYY-MM-DD-MM-SS.txt`. ([#451](https://github.com/realm/data-adapters/issues/451), since v1.5.0)
+
+## Fixes
+* Convert recursive processing of changesets pushed from Realm to Postgres to an iterative loop to avoid hitting the maximum call stack size when a very large number of changesets are processed at once. ([#441](https://github.com/realm/data-adapters/issues/441), since v1.0.0)
+* Some errors were causing the default logger to crash when trying to report them. ([#450](https://github.com/realm/data-adapters/issues/450), since v1.5.0)
+* Changes to rows which set a string field to a string containing a newline character are now propagated to Realm rather than being skipped ([#458](https://github.com/realm/data-adapters/pull/458), since v1.7.0)
+* Fixed incorrect conversion of timestamps when the Postgres server's default timezone was not set to UTC. ([#444](https://github.com/realm/data-adapters/pull/444), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+
 1.7.0 Release notes (2018-12-07)
 ================================
 ## Enhancements

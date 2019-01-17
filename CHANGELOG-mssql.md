@@ -1,3 +1,21 @@
+2.2.0 Release notes (2019-01-17)
+================================
+## Enhancements
+* Added a config option `adapterPollingPeriod` which controls how often the adapter checks for MSSQL changes. ([#446](https://github.com/realm/data-adapters/pull/446))
+* Added partial support for re-running the loader against an existing ROS server. All data in MSSQL will overwrite the data in ROS, but objects which exist in ROS but not MSSQL will not be deleted or propagated to MSSQL. This requires loading in online mode. ([#440](https://github.com/realm/data-adapters/pull/440))
+* Improved performance and memory usage of `Realm.Sync.Adapter`. ([realm/realm-js-private#501](https://github.com/realm/realm-js-private/pull/501))
+* To avoid excessive logging to the Console and hitting this node.js [issue](https://github.com/nodejs/node/issues/6379), a new logger is provided. It logs to a file `realm-adapter-log-YYYY-MM-DD-MM-SS.txt` created in the directory where the Adapter is started. The default logger is unchanged (logging to the Console) but you can switch to the file based logger by adding `logger: createFileLogger(loglevel, filename)` to the configuration. `loglevel` is optional and defaults to `INFO`, and `filename` is optional and defaults to `realm-adapter-log-YYYY-MM-DD-MM-SS.txt`. ([#451](https://github.com/realm/data-adapters/issues/451), since v1.7.0)
+
+## Fixes
+* SQL table and column names containing dashes (`-`) and other nonletters were not supported and resulted in a crash with the error message `Incorrect syntax near '-'.`. ([#372](https://github.com/realm/data-adapters/issues/372), since v1.0.0)
+* Some errors were causing the default logger to crash when trying to report them. ([#450](https://github.com/realm/data-adapters/issues/450), since v1.7.0)
+* Avoid blocking the node.js runloop for extremely long periods of time while loading data from MSSQL to ROS. ([#457](https://github.com/realm/data-adapters/issues/457), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
+
 2.1.0 Release notes (2018-12-07)
 ================================
 ## Enhancements

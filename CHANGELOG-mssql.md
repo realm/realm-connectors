@@ -1,3 +1,16 @@
+2.2.1 Release notes (2019-01-18)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* Fixed a bug where users cannot create loggers using `createFileLogger()` and `createConsoleLogger()`, and they had to rely on either custom or default logger ([#447](https://github.com/realm/data-adapters/pull/477), since v1.8.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
+
 2.2.0 Release notes (2019-01-17)
 ================================
 ## Enhancements

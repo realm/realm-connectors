@@ -1,3 +1,16 @@
+1.8.2 Release notes (2019-02-01)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* Querying Realm instances would sometimes pin the read transaction version, resulting in the file rapidly growing in size as further transactions were processed. ([realm/realm-object-store#766](https://github.com/realm/realm-object-store/pull/766), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+
 1.8.1 Release notes (2019-01-18)
 ================================
 ## Enhancements

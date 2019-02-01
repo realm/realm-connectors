@@ -1,3 +1,16 @@
+2.3.0 Release notes (2019-02-01)
+================================
+## Enhancements
+* Fast table count for the loader ([#392](https://github.com/realm/data-adapters/issues/392), since v1.0.0).
+
+## Fixes
+* Querying Realm instances would sometimes pin the read transaction version, resulting in the file rapidly growing in size as further transactions were processed. ([realm/realm-object-store#766](https://github.com/realm/realm-object-store/pull/766), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
+
 2.2.1 Release notes (2019-01-18)
 ================================
 ## Enhancements

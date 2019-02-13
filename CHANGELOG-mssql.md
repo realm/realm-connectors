@@ -1,3 +1,18 @@
+2.4.0 Release notes (2019-02-13)
+================================
+## Enhancements
+* If the SQL schema is changed (adding a column or a table) and the changes are added to the Realm schema, the adapter will now load the new data after a restart. ([#203](https://github.com/realm/data-adapters/issues/203))
+* Adding an index to the internal compound key tables to speed up loading time. ([#406](https://github.com/realm/data-adapters/issues/406))
+
+## Fixes
+* When running the loader with the setting `trackLoaderState = true` you could get an error `Critical Exception: Error: LoaderState.numRows must be of type 'number'`. ([#442](https://github.com/realm/data-adapters/pull/442), since v2.2.1)
+* Having a column available in ROS but not included via the schema configuration of the adapter would cause a critical exception to be thrown when integrating changes from ROS to SQL (`Critical exception: {} TypeError: Cannot read property 'type' of undefined TypeError: Cannot read property 'type' of undefined`). ([#485](https://github.com/realm/data-adapters/issues/485), since v1.0.0)
+* When running the loader with a mismatched schema definition between Realm and SQL a critical error could be thrown (`Critical Exception: RequestError: Statement(s) could not be prepared`) but without exiting the loader. ([494](https://github.com/realm/data-adapters/issues/494), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.3.0 Release notes (2019-02-01)
 ================================
 ## Enhancements

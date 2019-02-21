@@ -1,3 +1,18 @@
+1.9.0 Release notes (2019-02-21)
+================================
+## Enhancements
+* Reduced memory usage when processing Realm changesets which contain a very large number of changes. ([#461](https://github.com/realm/data-adapters/pulls/461))
+* Improve performance and reduce server-side file size growth by eliminating some redundant re-setting of properties. ([#461](https://github.com/realm/data-adapters/pulls/461))
+
+## Fixes
+* Fix a race condition which could lead to updates to objects made shortly after they are inserted being lost and not propagated to postgres. ([#461](https://github.com/realm/data-adapters/pulls/461), since v1.0.0)
+* When column/property mapping is enabled, deleting a row could lead to `Invalid null value for non-nullable primary key`. ([forum#2461](https://forum.realm.io/t/postgresql-adapter-potential-bug-with-delete-operations/2481), since v1.5.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+
 1.8.2 Release notes (2019-02-01)
 ================================
 ## Enhancements

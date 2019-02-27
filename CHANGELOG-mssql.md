@@ -1,3 +1,15 @@
+2.4.1 Release notes (2019-02-27)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* Using binary data (the Realm type `data` and SQL Server types `VARBINARY` and `BINARY`) could lead to the error `Validation failed for parameter 'var4'. Invalid buffer.`. ([#505](https://github.com/realm/data-adapters/issues/505), since v2.1.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.4.0 Release notes (2019-02-13)
 ================================
 ## Enhancements

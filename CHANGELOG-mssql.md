@@ -1,3 +1,15 @@
+2.4.2 Release notes (2019-03-18)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* When empty binary data is inserted in Realm, the adapter could crash once it was transferred to SQL. ([#505](https://github.com/realm/data-adapters/issues/505), since v2.1.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.4.1 Release notes (2019-02-27)
 ================================
 ## Enhancements

@@ -1,3 +1,16 @@
+2.5.0 Release notes (2019-03-26)
+================================
+## Enhancements
+* The validation of the configuration is now more strict which should lead to fewer surprises at runtime. ([#284](https://github.com/realm/data-adapters/issues/284))
+* No destructive changes to the Realm schema are allowed as they will lead to a crash at runtime. ([#284](https://github.com/realm/data-adapters/issues/284))
+
+## Fixes
+* A crash with the message `The incoming request has too many parameters. The server supports a maximum of 2100 parameters.` could occur if the number of columns in tables multiplied by `adapterSQLBatchSize` were larger than 2100. ([#509](https://github.com/realm/data-adapters/issues/509), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.4.2 Release notes (2019-03-18)
 ================================
 ## Enhancements

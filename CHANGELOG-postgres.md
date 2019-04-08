@@ -1,3 +1,17 @@
+1.10.0 Release notes (2019-04-08)
+================================
+## Enhancements
+* The validation of the configuration is now more strict which should lead to fewer surprises at runtime. ([#284](https://github.com/realm/data-adapters/issues/284))
+* No destructive changes to the Realm schema are allowed as they will lead to a crash at runtime. ([#284](https://github.com/realm/data-adapters/issues/284))
+
+## Fixes
+* When using the configuration option `switchToReferenceRealm` an error was thrown unless an admin token was configured. It's now only required that the user is an admin user. ([#527](https://github.com/realm/data-adapters/pull/527), since v1.4.0-rc.1)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+
 1.9.0 Release notes (2019-02-21)
 ================================
 ## Enhancements

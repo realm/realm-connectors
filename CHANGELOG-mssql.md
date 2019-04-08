@@ -1,3 +1,16 @@
+2.5.1 Release notes (2019-04-08)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* When using the configuration option `switchToReferenceRealm` an error was thrown unless an admin token was configured. It's now only required that the user is an admin user. ([#257](https://github.com/realm/data-adapters/pull/527), since v1.6.0)
+* Using a column of type link when defining a compound key, could cause the loader/adapter to crash with a critical exception `Invalid type 'undefined' Error: Invalid type 'undefined'` ([#510](https://github.com/realm/data-adapters/issues/510), since v1.0.0).
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.5.0 Release notes (2019-03-26)
 ================================
 ## Enhancements

@@ -1,3 +1,16 @@
+2.6.0 Release notes (2019-05-16)
+================================
+## Enhancements
+* Upgrade node mssql version from 4.2.3 to 5.0.5. This brings improved robustness in the MSSQL connection pool. See https://github.com/tediousjs/node-mssql/releases for details.
+
+## Fixes
+* When migrating a Realm object to SQL, coverting a binary data property could lead to a crash. (unrelated to but discovered by investigiting [#549](https://github.com/realm/data-adapters/issues/549), since v1.0.0)
+* A primary key referenced by a foreign key with non-string data type could lead to a crash with the error message like `No property 'Douglas Adams' on object of type 'Author' when processing object:`. ([#551](https://github.com/realm/data-adapters/issues/551), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.5.1 Release notes (2019-04-08)
 ================================
 ## Enhancements

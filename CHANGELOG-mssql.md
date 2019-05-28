@@ -1,3 +1,21 @@
+2.7.0 Release notes (2019-05-28)
+================================
+NOTE: The minimum version of Realm Object Server has been increased to 3.21.0 and attempting to connect to older versions will produce protocol mismatch errors. Realm Cloud has already been upgraded to this version, and users using that do not need to worry about this.
+
+## Enhancements
+* Added support for SSL via the [Realm.Sync.SSLConfiguration](https://realm.io/docs/javascript/2.26.0/api/Realm.Sync.html#~SSLConfiguration) configuration ([#180](https://github.com/realm/data-adapters/issues/180)).
+* Improved query performance when querying integer properties with indexes e.g., primary key properties. ([realm-core#3272](https://github.com/realm/realm-core/pull/3272))
+* Improved write performance when writing changes to disk. ([realm-sync#2927](https://github.com/realm/realm-core/ssues/2927))
+
+## Fixes
+* Fixed links for relationships on tables which do not define a `sqlserverPrimaryKey` but use the `primaryKey` as a primary key in both realm and SQL. ([#558](https://github.com/realm/data-adapters/issues/558), since v1.0.0)
+* Some queries might have additional parameters, and the SQL Server's limit of 2100 parameters would not be respected. ([#554](https://github.com/realm/data-adapters/issues/554), since v2.5.0)
+* Links and lists might have been incompletely loaded if the server's estimate (`sys.dm_db_partition_stats.row_count`) was off by more than the loader's batch size. ([#392](https://github.com/realm/data-adapters/issues/392), since v2.3.0)
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.6.0 Release notes (2019-05-16)
 ================================
 ## Enhancements

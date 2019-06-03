@@ -1,5 +1,22 @@
+1.11.0 Release notes (2019-06-03)
+=================================
+NOTE: The minimum version of Realm Object Server has been increased to 3.21.0 and attempting to connect to older versions will produce protocol mismatch errors. Realm Cloud has already been upgraded to this version, and users using that do not need to worry about this.
+
+## Enhancements
+* Added Support for SSL via the [Realm.Sync.SSLConfiguration](https://realm.io/docs/javascript/2.26.0/api/Realm.Sync.html#~SSLConfiguration) configuration ([#180](https://github.com/realm/data-adapters/issues/180)).
+* Improved query performance when querying integer properties with indexes e.g., primary key properties. ([realm-core#3272](https://github.com/realm/realm-core/pull/3272))
+* Improved write performance when writing changes to disk. ([realm-sync#2927](https://github.com/realm/realm-sync/ssues/2927))
+
+## Fixes
+* None.
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+
 1.10.0 Release notes (2019-04-08)
-================================
+=================================
 ## Enhancements
 * The validation of the configuration is now more strict which should lead to fewer surprises at runtime. ([#284](https://github.com/realm/data-adapters/issues/284))
 * No destructive changes to the Realm schema are allowed as they will lead to a crash at runtime. ([#284](https://github.com/realm/data-adapters/issues/284))

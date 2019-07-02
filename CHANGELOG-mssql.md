@@ -1,3 +1,27 @@
+2.7.2 Release notes (2019-07-02)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* Fix MSSQL inserts causing a crash if the new row goes to a table with a compound primary key which is also a Realm link. Users would see a message similar to `error: Critical exception: {} JS value must be of type 'object', got (3) Error: JS value must be of type 'object', got (3).` ([#568](https://github.com/realm/data-adapters/issues/568), since v1.6.2)
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
+2.7.1 Release notes (2019-06-12)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* When performing initial load (SQL Server -> Realm Object Server), the adapter generates a unique value for primary keys for tables where SQL and Realm have separate primary keys. This leads to an `UPDATE` statement, and if `loaderBatchSize` is larger than 1050, this can result in a crash with the error message `The incoming request has too many parameters. The server supports a maximum of 2100 parameters.` ([#561](https://github.com/realm/data-adapters/issues/561), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.7.0 Release notes (2019-05-28)
 ================================
 NOTE: The minimum version of Realm Object Server has been increased to 3.21.0 and attempting to connect to older versions will produce protocol mismatch errors. Realm Cloud has already been upgraded to this version, and users using that do not need to worry about this.

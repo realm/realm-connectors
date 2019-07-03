@@ -1,3 +1,15 @@
+2.7.3 Release notes (2019-07-03)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* If Realm instructions of more than one type were inserted, only the first type would get the `sqlserverPrimaryKey` populated back to the Realm property. This could be observed if a new Realm object links to another new Realm object of a different type in the same transaction. ([#566](https://github.com/realm/data-adapters/issues/566), since v1.6.0).
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.7.2 Release notes (2019-07-02)
 ================================
 ## Enhancements

@@ -1,3 +1,15 @@
+2.7.4 Release notes (2019-07-16)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* Fixed an adapter error when a MSSQL delete operated on an object with sqlserverPrimaryKey property which is an numeric type. Users could see an error message like this: `Got Error: Property must be of type 'number', got (65127597)` (#569, since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.7.3 Release notes (2019-07-03)
 ================================
 ## Enhancements

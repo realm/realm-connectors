@@ -1,3 +1,12 @@
+2.7.5 Release notes (2019-07-31)
+================================
+## Fixes
+* Fix links sometimes not being populated when MSSQL changes include two newly inserted objects with a link between them. ([#4](https://jira.mongodb.org/browse/RLA-4), since v1.0.0) 
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.7.4 Release notes (2019-07-16)
 ================================
 ## Enhancements

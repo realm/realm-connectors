@@ -1,3 +1,12 @@
+2.7.6 Release notes (2019-08-07)
+================================
+## Fixes
+* Inserts from Realm operations on a table with a `sqlserverPrimaryKey` would fail to insert if the MSSQL table had a trigger defined with an error such as: `cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause.` ([#5](https://jira.mongodb.org/browse/RLA-5) since v2.0.0).
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.7.5 Release notes (2019-07-31)
 ================================
 ## Fixes

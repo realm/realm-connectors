@@ -1,3 +1,12 @@
+2.7.7 Release notes (2019-08-14)
+================================
+## Fixes
+* Fixed links sometimes not populating when created on new objects in the same transaction from objects with a sqlserverPrimaryKey property. An error message such as: "Could not find an object to set it's missing links on the second pass for object: {...}". ([#4](https://jira.mongodb.org/browse/RLA-4), since v2.7.5)
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.7.6 Release notes (2019-08-07)
 ================================
 ## Fixes

@@ -1,3 +1,17 @@
+1.11.1 Release notes (2019-09-05)
+================================
+## Enhancements
+* None.
+
+## Fixes
+* Added missing type in declaration of `PostgresAdapterConfiguration.mapPostgresColumnName`.
+* When a single quote is stored within a string column, only first part would be transfered to Realm. ([#RLA-7](https://jira.mongodb.org/projects/RLA/issues/RLA-7), since v1.0.0)
+
+## Compatibility
+* Realm Object Server: 3.11.0 or later
+* APIs are backwards compatible with all previous releases in the 1.x.y series.
+
+
 1.11.0 Release notes (2019-06-03)
 =================================
 NOTE: The minimum version of Realm Object Server has been increased to 3.21.0 and attempting to connect to older versions will produce protocol mismatch errors. Realm Cloud has already been upgraded to this version, and users using that do not need to worry about this.

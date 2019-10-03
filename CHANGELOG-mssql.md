@@ -1,3 +1,12 @@
+2.8.0 Release notes (2019-10-03)
+================================
+## Enhancements
+* Added option `logProgressAfterOpsProcessed` to control how often progress logging is done. Default value is 1000. ([#590](https://github.com/realm/data-adapters/pull/590)).
+
+## Compatibility
+* Realm Object Server: 3.21.0 or later
+* APIs are backwards compatible with all previous releases in the 2.x.y series.
+
 2.7.7 Release notes (2019-08-14)
 ================================
 ## Fixes
